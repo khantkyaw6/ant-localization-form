@@ -7,6 +7,7 @@ import TodoList from "./reduxtoolkit/todolist/todoList";
 import DayDark from "./day dark theme/dayDark";
 
 import { ConfigProvider, theme, Button, Card } from "antd";
+import DropDownCompo from "./drop_down";
 
 function App() {
   const { defaultAlgorithm, darkAlgorithm } = theme;
@@ -18,6 +19,7 @@ function App() {
       }}
     >
       <DayDark setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
+      <DropDownCompo />
       {/* <AntLoginForm /> */}
       {/* <CounterOne />*/}
       {/* <TodoList /> */}
