@@ -9,25 +9,45 @@ import DayDark from "./day dark theme/dayDark";
 import { ConfigProvider, theme, Button, Card } from "antd";
 import CommonSelect from "./select/commonSelect";
 import { select_data } from "./for_variable/constant_data";
+import DropDownCompo from "./drop_down";
+import Admin from "./reduxtoolkithook/views/admin";
 
 function App() {
-  const { defaultAlgorithm, darkAlgorithm } = theme;
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const { defaultAlgorithm, darkAlgorithm } = theme;
+  // const [isDarkMode, setIsDarkMode] = useState(false);
   return (
-    <ConfigProvider
-      theme={{
-        algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,
-      }}
-    >
-      <DayDark setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
-      <br />
-      <br /> <hr /> <br />
-      <CommonSelect data={select_data} />
-      {/* <AntLoginForm /> */}
-      {/* <CounterOne />*/}
-      {/* <TodoList /> */}
-    </ConfigProvider>
+    <>
+      <Admin />
+    </>
+    // <ConfigProvider
+    //  theme={{
+    //    algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,
+    //  }}
+    // >
   );
+  {
+    /* <DayDark setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} /> */
+  }
+  {
+    /* <br />
+      <br /> <hr /> <br /> */
+  }
+  {
+    /* <CommonSelect data={select_data} /> */
+  }
+  {
+    /* <DropDownCompo /> */
+  }
+  {
+    /* <AntLoginForm /> */
+  }
+  {
+    /* <CounterOne />*/
+  }
+  {
+    /* <TodoList /> */
+  }
+  // </ConfigProvider>
 }
 
 export default App;

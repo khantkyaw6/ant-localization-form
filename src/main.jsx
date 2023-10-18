@@ -9,15 +9,15 @@ import "./index.css";
 import { apiSlice } from "./reduxtoolkit/feature/api/apiSlice.js";
 import { Provider } from "react-redux";
 // import { ApiProvider } from "@reduxjs/toolkit/query/react";
-import { store } from "./reduxtoolkit/store/store.js";
+// import { store } from "./reduxtoolkit/store/store.js";
+import { store } from "./reduxtoolkithook/store.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <ConfigProvider locale={enUS}> */}
-    {/* <Provider store={store}> */}
-
-    <App />
-    {/* </Provider> */}
+    <Provider store={store}>
+      <App />
+    </Provider>
     {/* </ConfigProvider> */}
   </React.StrictMode>
 );
