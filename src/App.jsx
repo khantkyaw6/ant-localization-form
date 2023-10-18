@@ -7,6 +7,8 @@ import TodoList from "./reduxtoolkit/todolist/todoList";
 import DayDark from "./day dark theme/dayDark";
 
 import { ConfigProvider, theme, Button, Card } from "antd";
+import CommonSelect from "./select/commonSelect";
+import { select_data } from "./for_variable/constant_data";
 
 function App() {
   const { defaultAlgorithm, darkAlgorithm } = theme;
@@ -18,6 +20,9 @@ function App() {
       }}
     >
       <DayDark setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
+      <br />
+      <br /> <hr /> <br />
+      <CommonSelect data={select_data} />
       {/* <AntLoginForm /> */}
       {/* <CounterOne />*/}
       {/* <TodoList /> */}

@@ -9,23 +9,23 @@ const DayDark = ({ setIsDarkMode, isDarkMode }) => {
     setIsDarkMode((previousValue) => !previousValue);
   };
   return (
-    <Card style={{ width: "max-content" }}>
-      <Button
-        shape="circle"
-        onClick={handleClick}
-        icon={
-          isDarkMode ? (
-            <Tooltip title="Change Light Mode">
-              <FontAwesomeIcon icon={faSun} />
-            </Tooltip>
-          ) : (
-            <Tooltip title="Change Dark Mode">
-              <FontAwesomeIcon icon={faMoon} />
-            </Tooltip>
-          )
-        }
-      ></Button>
-    </Card>
+    // <Card style={{ width: "max-content" }}>
+    <Button
+      shape="circle"
+      onClick={handleClick}
+      icon={
+        isDarkMode ? (
+          <Tooltip title="Change Light Mode">
+            <FontAwesomeIcon icon={faSun} />
+          </Tooltip>
+        ) : (
+          <Tooltip title="Change Dark Mode">
+            <FontAwesomeIcon icon={faMoon} />
+          </Tooltip>
+        )
+      }
+    ></Button>
+    // </Card>
   );
 };
 
