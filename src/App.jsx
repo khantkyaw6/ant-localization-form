@@ -11,14 +11,17 @@ import CommonSelect from "./select/commonSelect";
 import { select_data } from "./for_variable/constant_data";
 import DropDownCompo from "./drop_down";
 import Admin from "./reduxtoolkithook/views/admin";
+import Login from "./login/login";
 
 function App() {
   // const { defaultAlgorithm, darkAlgorithm } = theme;
   // const [isDarkMode, setIsDarkMode] = useState(false);
   return (
     <>
-      <Admin />
+      {/* <Login /> */}
+      <DropDownCompo />
     </>
+    // <Admin />
     // <ConfigProvider
     //  theme={{
     //    algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,
@@ -36,7 +39,6 @@ function App() {
     /* <CommonSelect data={select_data} /> */
   }
   {
-    /* <DropDownCompo /> */
   }
   {
     /* <AntLoginForm /> */

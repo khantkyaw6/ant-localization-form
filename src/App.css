@@ -40,9 +40,21 @@
 .read-the-docs {
   color: #888;
 } */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+body {
+  background-color: #eeecec;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(11.58, 97%, 88%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(277.09, 44%, 49%) 0, transparent 55%);
+  height: 100vh;
 }

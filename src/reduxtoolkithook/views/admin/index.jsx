@@ -1,12 +1,14 @@
 import React from "react";
 import {
   useAdminAddMutation,
+  useAdminDeleteMutation,
   useAdminListQuery,
   useAdminUpdateMutation,
 } from "../../feature/adminApi";
 import { Button, Checkbox, Form, Input, Typography, Space } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import Title from "antd/es/skeleton/Title";
+import { useForm } from "antd/lib/form/Form";
 
 const { Text } = Typography;
 
@@ -20,7 +22,8 @@ const Admin = () => {
   const { data: admins, isLoading, isError, error } = useAdminListQuery();
   const [adminAdd, { isLoading: addLoading }] = useAdminAddMutation();
   const [adminUpdate, { isLoading: updateLoading }] = useAdminUpdateMutation();
-  const [form] = Form.useForm();
+  const [adminDelete, { isLoading: deleteLoading }] = useAdminDeleteMutation();
+  const [form] = useForm();
 
   const onFinish = (values) => {
     console.log(values);
@@ -38,16 +41,27 @@ const Admin = () => {
 
   const onFinishUpdate = (values) => {
     console.log(values);
-    adminUpdate({ uuid: values.id, data: values })
+    console.log(typeof values.id);
+    const { id, ...data } = values;
+
+    adminUpdate({ id, data })
       .unwrap()
       .then((res) => {
         console.log(res);
         console.log("Updated");
+        form.resetFields();
       });
   };
 
   const onFinishUpdateFailed = (err) => {
     console.log("Error", err);
+  };
+
+  const deleteHandler = (id) => {
+    console.log(id);
+    adminDelete({ id })
+      .unwrap()
+      .then((res) => console.log(res));
   };
 
   console.log(admins);
@@ -62,6 +76,7 @@ const Admin = () => {
           <Text strong>{admin.name}</Text> <br />
           <Text>Email: </Text>
           <Text strong>{admin.email}</Text>
+          <Button onClick={() => deleteHandler(admin._id)}>Delete</Button>
         </div>
       ))}
       <br />

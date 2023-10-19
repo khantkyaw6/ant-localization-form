@@ -24,6 +24,13 @@ export const adminApi = createApi({
       }),
       invalidatesTags: ["Adminapi"],
     }),
+    adminDelete: builder.mutation({
+      query: ({ id }) => ({
+        url: `/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Adminapi"],
+    }),
   }),
 });
 
@@ -31,4 +38,5 @@ export const {
   useAdminListQuery,
   useAdminAddMutation,
   useAdminUpdateMutation,
+  useAdminDeleteMutation,
 } = adminApi;
