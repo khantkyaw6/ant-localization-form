@@ -12,16 +12,21 @@ import { select_data } from "./for_variable/constant_data";
 import DropDownCompo from "./drop_down";
 import Admin from "./reduxtoolkithook/views/admin";
 import Login from "./login/login";
+import routerConfig from "./lazy router/routes/router-config";
+import { RouterProvider } from "react-router-dom";
+
 
 function App() {
   // const { defaultAlgorithm, darkAlgorithm } = theme;
   // const [isDarkMode, setIsDarkMode] = useState(false);
   return (
     <>
+      <RouterProvider router={routerConfig} />
       {/* <Login /> */}
-      <DropDownCompo />
+      {/* <DropDownCompo /> */}
+      {/* <Admin /> */}
+
     </>
-    // <Admin />
     // <ConfigProvider
     //  theme={{
     //    algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,

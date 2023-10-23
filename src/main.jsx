@@ -15,9 +15,11 @@ import { store } from "./reduxtoolkithook/store.js";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <ConfigProvider locale={enUS}> */}
+
     <Provider store={store}>
       <App />
     </Provider>
+
     {/* </ConfigProvider> */}
   </React.StrictMode>
 );

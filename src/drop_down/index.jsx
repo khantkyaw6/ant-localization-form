@@ -49,8 +49,8 @@ const DropDownCompo = () => {
     val.key === "en"
       ? setLabelPointer(0)
       : val.key === "mm"
-      ? setLabelPointer(1)
-      : setLabelPointer(2);
+        ? setLabelPointer(1)
+        : setLabelPointer(2);
   };
 
   return (
